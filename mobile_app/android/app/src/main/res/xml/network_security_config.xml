@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext traffic only within local network (10.x.x.x) for mDNS discovery -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.6.0.0</domain>
+        <domain includeSubdomains="false">localhost</domain>
+    </domain-config>
+    <!-- All other traffic must be encrypted -->
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
+

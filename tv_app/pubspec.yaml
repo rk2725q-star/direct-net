@@ -1,0 +1,44 @@
+name: tv_app
+description: DirectNet TV — Android TV app that connects to phone gateway.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Shared DirectNet package
+  shared:
+    path: ../shared
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Local storage
+  shared_preferences: ^2.2.3
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # TV-optimized focus & D-pad navigation
+  focus_detector_v2: ^3.1.0
+
+  # UUID
+  uuid: ^4.4.0
+
+  # UI
+  google_fonts: ^6.2.1
+  gap: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

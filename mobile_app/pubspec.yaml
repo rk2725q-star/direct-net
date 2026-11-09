@@ -1,0 +1,53 @@
+name: mobile_app
+description: DirectNet Mobile — Gateway app that shares phone internet to TV via WireGuard.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Shared DirectNet package
+  shared:
+    path: ../shared
+
+  # State management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # QR code generation (to show TV the pairing config)
+  qr_flutter: ^4.1.0
+
+  # Local storage for peer configs & settings
+  shared_preferences: ^2.2.3
+
+  # Network utilities — get local WiFi IP for the WG endpoint
+  network_info_plus: ^6.0.1
+
+  # UUID generation
+  uuid: ^4.4.0
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # UI
+  google_fonts: ^6.2.1
+  fl_chart: ^0.69.0
+  gap: ^3.0.1
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.3
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android TV Launcher Banner (320x180 dp) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#0A0D14" />
+    <!-- Text is added programmatically via the launcher; this is a placeholder banner -->
+</shape>
+
