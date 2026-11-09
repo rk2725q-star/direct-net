@@ -17,6 +17,7 @@
 
     <!-- Foreground service — keep gateway alive in background -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
     <!-- Wake lock — prevent gateway from sleeping while TV is connected -->
@@ -56,7 +57,7 @@
         <service
             android:name=".GatewayService"
             android:exported="false"
-            android:foregroundServiceType="specialUse" />
+            android:foregroundServiceType="connectedDevice" />
 
         <meta-data
             android:name="flutterEmbedding"

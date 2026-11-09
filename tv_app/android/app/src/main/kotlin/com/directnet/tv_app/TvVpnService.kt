@@ -65,7 +65,7 @@ tunnel:
 socks5:
   port: $proxyPort
   address: '$proxyHost'
-  udp: 'tcp'
+  udp: 'udp'
 
 mapdns:
   address: 172.19.0.2
@@ -76,7 +76,7 @@ mapdns:
 
 misc:
   task-stack-size: 86016
-  tcp-buffer-size: 131072
+  tcp-buffer-size: 262144
   connect-timeout: 10000
   tcp-read-write-timeout: 300000
   udp-read-write-timeout: 60000
@@ -92,6 +92,11 @@ misc:
                 .addAddress("172.19.0.1", 24)
                 .addDnsServer("172.19.0.2") // ONLY route TV DNS to mapdns resolver!
                 .addRoute("0.0.0.0", 0)
+
+            try {
+                builder.addAddress("fc00::1", 128)
+                builder.addRoute("::", 0)
+            } catch (_: Throwable) {}
 
             // Exclude DirectNet TV app itself so its sockets bypass the tunnel and reach the phone proxy
             try {
